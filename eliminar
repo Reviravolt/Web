@@ -1,0 +1,15 @@
+<?php
+
+include "conexao.php";
+$id=$_GET['id'];
+$sql=$pdo->prepare("DELETE FROM categoria WHERE id=$id");
+$sql->execute();
+if($sql->execute()){
+    echo "Música excluida com sucesso";
+}
+?>
+<p align="center"><a href="excluir.php"> Excluir outra</p>;
+<p align="center"><a href="index.php"> Home </p>
+
+
+
