@@ -1,0 +1,34 @@
+<?php
+
+include "conexao.php";
+if(isset($_POST['acao']))
+{
+    $nome_categoria=$_POST['nome_categoria'];
+    $sql=$pdo->prepare("INSERT INTO categoria VALUES(default,?)");
+    $sql->execute(array($nome_categoria));
+    echo "Música inserida com sucesso ";
+}
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        body {background-color: #87CEFA;
+                text-align: left;}
+        p {font-size: 25px;
+        
+          }
+        </style>
+        <title>Cadastro de Categoria</title>
+    </head>
+       <body>
+           <p> Coloque sua Música </p>
+       <form method="post">
+            <input type="text" name="nome_categoria" required>
+            <input type="submit" name="acao" value="Envia">
+        
+        <p align="center">  <a href="index.php"> Home</p>
+       </form>
+       </body>
+</html>
