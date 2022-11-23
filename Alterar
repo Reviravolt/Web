@@ -1,0 +1,29 @@
+<?php
+
+include "conexao.php";
+$id=addslashes($_GET['id']);
+$sql=$pdo->prepare("SELECT * FROM categoria WHERE id=$id");
+$sql->execute();
+$info=$sql->fetchAll();
+foreach ($info as $key => $value) {
+}
+?>
+<form method ="post">
+    <input type=hidden name="id" value="<?phpif (isset($info)){echo $value['id'];} ?>">
+    <label>Nome Categoria<input type="text" name="nome_categoria" value="<?php if (isset($info)){echo $value['nome_categoria'];} ?>">
+        <input type="submit" value="Alterar" name="alterar">
+</form>
+
+<?php
+if (isset($_POST['alterar'])){
+    $id=addslashes(@$_POST['id']);
+    $nome_categoria= addslashes(@$_POST['nome_categoria']);
+    $sql=$pdo->prepare("UPDATE categoria set nome_categoria=:m WHERE id=:id");
+    $sql->bindValue(":m",$nome_categoria);
+    $sql->bindValue(":id",$id);
+    $sql->execute();
+    header("location:index.php");
+}
+
+?>
+<p align="center"><a href="index.php"> Home</p>
