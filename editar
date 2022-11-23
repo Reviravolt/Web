@@ -1,0 +1,21 @@
+<?php
+include "conexao.php";
+echo "<p> Escolha uma categoria para editar</p>";
+$sql=$pdo->prepare("SELECT * FROM categoria ORDER BY id ASC");
+$sql->execute();
+$info=$sql->fetchAll();
+foreach($info as $key => $value) {
+    echo 'Id:'.$value["id"];
+    echo '| Nome da Categoria:'.$value['nome_categoria'];
+    echo "|<a href=\"alterar.php?id=$value[id]\">Editar</a><br>";
+}
+?>
+<p align="center"><a href="index.php"> Home</p>
+
+<style>
+        body {background-color: #00E5EE;
+                text-align: left;}
+        p {font-size: 25px;
+          }
+        </style>
+
