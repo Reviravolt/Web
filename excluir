@@ -1,0 +1,22 @@
+
+<?php
+
+include "conexao.php";
+echo"<p> Escolha uma música para excluir</p>";
+$sql=$pdo->prepare("SELECT * FROM categoria ORDER BY id ASC");
+$sql->execute();
+$info=$sql->fetchAll();
+foreach ($info as $key => $value) {
+    echo 'id:'.$value['id'];
+    echo '| Nome da Categoria:'.$value['nome_categoria'];
+    echo "| <a href=\"eliminar.php?id=$value[id]\">Excluir </a><br>";
+    
+    } 
+    ?> <p align="center"><a href="index.php"> Home</p>
+    
+    <style>
+        body {background-color: #B2DFEE;
+                text-align: left;}
+        p {font-size: 25px;
+          }
+        </style>
