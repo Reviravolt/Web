@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    <?php include 'Styles.css'; ?>
+    </style>
+  <title>Mockup</title>
+</head>
+<body>
+    
+<div id="Hear">  
+    <h1 id="AN">Reviravoltas</h1>
+</div>
+    <br>  
+<div id="Nav">
+    <p> AO chamado da manhã através do som dentro do vale</p>
+</div>   
+      
+<div class="Main"> 
+    <div class="buttons">
+        <h2 class="Styleh1">Acesse a base de dados.</h2>
+    <form method="post">
+        <a href="incluir.php" class="btn btn-2">Incluir</a><br><br><br>
+        <a href="excluir.php" class="btn btn-2">Excluir</a><br><br><br>
+        <a href="editar.php" class="btn btn-2">Editar</a>  
+    </div>
+</div>
+
+<div id="ASD">
+    <p> Direita</p>
+</div>
+    <br> 
+<div id="RDP">
+    <p> Rodape </p>
+</div>
+  	
+
+
+</body>
+</html>
+ 
